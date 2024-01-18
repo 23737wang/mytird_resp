@@ -18,7 +18,7 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
-    @GetMapping("/com/example/blog/{id}")
+    @GetMapping("/blog/{id}")
     @CrossOrigin
     public Result detail(@PathVariable(name = "id") Long id) {
         Blog blog = blogService.getById(id);

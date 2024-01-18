@@ -91,6 +91,14 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>1.4.0</version>
         </dependency>
+        <!--添加hutool依赖-->
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.7.14</version>
+            </dependency>
+
     </dependencies>
 
     <build>
