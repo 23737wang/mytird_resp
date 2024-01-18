@@ -20,4 +20,6 @@ public interface BlogMapper {
 
     @Select("SELECT * FROM m_blog ORDER BY created DESC limit #{limit} offset #{offset}")
     public List<Blog> selectByCondition(int limit, Long offset);
+    @Select("select count(*) from m_blog")
+    public Long selectCount();
 }

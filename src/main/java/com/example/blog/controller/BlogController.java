@@ -1,13 +1,15 @@
 package com.example.blog.controller;
 
+import com.example.blog.common.Page.IPage;
 import com.example.blog.entity.Blog;
 import com.example.blog.entity.Result;
 import com.example.blog.service.BlogService;
 import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
+
+
 
 @RestController
 
@@ -55,8 +57,7 @@ public class BlogController {
     public Result list(@RequestParam(defaultValue = "1") Integer currentPage) {
 
         Page page = new Page(currentPage, 5);
-        PageInfo<Blog> pageData = blogService.page(page);
-
+        IPage<Blog> pageData = blogService.page(page);
         return Result.success(pageData);
     }
 
